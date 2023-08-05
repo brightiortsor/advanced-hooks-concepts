@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Center } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -13,6 +13,13 @@ function Counter() {
       setCount((prevCount) => prevCount - 1);
     }
   };
+
+  // useEffect(() => {
+  //   const interval = setInterval(increment, 1000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   //adding an item to an array
   const [items, setItems] = useState([]);
