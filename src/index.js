@@ -5,11 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 
+//context to be made available to all components
+export const UsernameContext = React.createContext();
+export const ChannelContext = React.createContext();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <UsernameContext.Provider value={"Bright"}>
+        <ChannelContext.Provider value={"Hooks Series"}>
+          <App />
+        </ChannelContext.Provider>
+      </UsernameContext.Provider>
     </ChakraProvider>
   </React.StrictMode>
 );
